@@ -1,0 +1,40 @@
+frc-scouting-system/
+├── .gitignore             # 忽略檔案 (node_modules, venv, .env)
+├── README.md              # 專案說明 (這對特殊選才極重要！)
+├── docker-compose.yml     # (進階) 一鍵啟動前後端與資料庫
+├── /docs                  # 文件區 (放你的架構圖、API 文件截圖、備審素材)
+│
+├── /backend               # Python FastAPI 專案
+│   ├── .env               # 後端環境變數 (資料庫密碼等)
+│   ├── requirements.txt   # Python 套件清單
+│   ├── main.py            # 程式進入點 (Entry Point)
+│   └── /app               # 應用程式核心邏輯
+│       ├── __init__.py
+│       ├── database.py    # 資料庫連線設定
+│       ├── models.py      # 資料庫模型 (ORM Models, 對應 DB Table)
+│       ├── schemas.py     # 資料驗證模型 (Pydantic, 對應 API 輸入/輸出)
+│       ├── crud.py        # 資料庫操作邏輯 (Create, Read, Update, Delete)
+│       ├── /routers       # API 路徑管理 (把 API 分類)
+│       │   ├── __init__.py
+│       │   ├── match.py   # 比賽相關 API
+│       │   ├── team.py    # 隊伍相關 API
+│       │   └── auth.py    # (選配) 登入驗證 API
+│       └── /core          # 核心設定
+│           └── config.py  # 讀取 .env 的設定檔
+│
+└── /frontend              # Vue 3 專案 (Vite)
+    ├── .env               # 前端環境變數 (API 網址)
+    ├── index.html         # 網頁入口
+    ├── package.json       # JS 套件清單
+    ├── vite.config.js     # Vite 設定檔
+    └── /src               # 原始碼
+        ├── App.vue        # 根組件
+        ├── main.js        # Vue 初始化
+        ├── /api           # API 串接層 (Axios 封裝)
+        │   ├── match.js   # 呼叫後端 match API
+        │   └── team.js    # 呼叫後端 team API
+        ├── /assets        # 靜態資源 (Logo, 圖片)
+        ├── /components    # 共用組件 (按鈕, 表單, 卡片) - "小積木"
+        ├── /views         # 頁面組件 (首頁, 分析頁) - "完整頁面"
+        ├── /router        # 路由設定 (定義網址跳轉)
+        └── /stores        # 狀態管理 (Pinia) - 存放 User 資訊或暫存數據
