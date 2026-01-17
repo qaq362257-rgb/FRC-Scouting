@@ -8,7 +8,7 @@ frc-scouting-system/
 │   ├── .env               # 後端環境變數 (資料庫密碼等)
 │   ├── requirements.txt   # Python 套件清單
 │   ├── main.py            # 程式進入點 (Entry Point)
-│   └── /app               # 應用程式核心邏輯
+│   └── /App               # 應用程式核心邏輯
 │       ├── __init__.py
 │       ├── database.py    # 資料庫連線設定
 │       ├── models.py      # 資料庫模型 (ORM Models, 對應 DB Table)
