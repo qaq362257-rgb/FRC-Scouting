@@ -1,17 +1,11 @@
 <script setup>
-console.log('Hello Vue');
-
+import counter from './components/Counter.vue';
+import { ref } from 'vue';
+const hitCount = ref(0);
 </script>
 <template>
-    <h1 class="text-red-500 ">My First Vue</h1>
-    <main>
-        <nav>
-            <ul>
-                <li>A</li>
-                <li>B</li>
-            </ul>
-        </nav>
-    </main>
+    <counter label="Hit" v-model="hitCount"></counter>
+    <div>Hit : {{ hitCount }}</div>
 </template>
 <style scoped>
 
