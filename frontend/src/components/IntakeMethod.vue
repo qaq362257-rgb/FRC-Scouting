@@ -6,15 +6,7 @@ defineProps({
 });
 const method = defineModel(IntakeMethod.NO);
 function changeMethod(nowMethod) {
-    if (nowMethod === IntakeMethod.FLOOR) {
-        method.value = IntakeMethod.FLOOR;
-    } else if (nowMethod === IntakeMethod.PLAYER) {
-        method.value = IntakeMethod.PLAYER;
-    } else if (nowMethod === IntakeMethod.BOTH) {
-        method.value = IntakeMethod.BOTH;
-    } else if (nowMethod === IntakeMethod.NO) {
-        method.value = IntakeMethod.NO;
-    }
+    method.value = nowMethod;
 }
 </script>
 <template>

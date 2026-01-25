@@ -7,13 +7,7 @@ defineProps({
 const state = defineModel(HangingState.NO);
 
 function changeState(newState) {
-    if (newState === HangingState.NO) {
-        state.value = HangingState.NO;
-    } else if (newState === HangingState.FAIL) {
-        state.value = HangingState.FAIL;
-    } else if (newState === HangingState.SUCCESS) {
-        state.value = HangingState.SUCCESS;
-    }
+    state.value = newState;
 }
 </script>
 <template>
