@@ -11,7 +11,7 @@ const intake = ref();
 const uses = ref([]);
 </script>
 <template>
-    <counter label="Hit" v-model="hitCount"></counter>
+    <counter label="Hit" v-model="hitCount" :max="10"></counter>
     <div>Hit : {{ hitCount }}</div>
     <confirm label="Leave Line" v-model="doLeaveLine"></confirm>
     <div>Leave Line : {{ doLeaveLine }}</div>

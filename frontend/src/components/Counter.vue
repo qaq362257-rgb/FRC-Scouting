@@ -1,16 +1,26 @@
 <script setup>
-defineProps({
-  label: String
+const prop = defineProps({
+  label: String,
+  max: {
+    type: Number,
+    default: -1
+  }
 });
 const count = defineModel({ type: Number, default: 0 })
 
 const increment = () => {
-  count.value++
+  if (prop.max !== -1) {
+    if (count.value < prop.max) {
+      count.value++;
+    }
+  } else {
+    count.value++;
+  }
 }
 
 const decrement = () => {
   if (count.value > 0) {
-    count.value--
+    count.value--;
   }
 }
 </script>
@@ -24,7 +34,8 @@ const decrement = () => {
       <button 
         type="button" 
         @click="decrement" 
-        class="w-12 h-12 flex items-center justify-center bg-red-100 text-red-600 active:bg-red-200 transition text-2xl font-bold border-r border-gray-200"
+        :disabled="count<=0"
+        class="w-12 h-12 flex items-center justify-center bg-red-100 text-red-600 active:bg-red-200 transition text-2xl font-bold border-r border-gray-200 disabled:opacity-50 disabled:bg-gray-100 disabled:text-gray-400"
       >
         -
       </button>
@@ -34,7 +45,8 @@ const decrement = () => {
       <button 
         type="button" 
         @click="increment" 
-        class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-600 active:bg-green-200 transition text-2xl font-bold border-l border-gray-200"
+        :disabled="max!==-1&&count>=max"
+        class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-600 active:bg-green-200 transition text-2xl font-bold border-l border-gray-200 disabled:opacity-50 disabled:bg-gray-100 disabled:text-gray-400"
       >
         +
       </button>
