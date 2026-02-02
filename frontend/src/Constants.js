@@ -28,3 +28,34 @@ export const Uses = Object.freeze({
     DEFENSE: 'defense',
     SUPPORT: 'support'
 });
+
+export const HangingStateArr = [
+    HangingState.SUCCESS,
+    HangingState.FAIL,
+    HangingState.NO
+];
+
+export const IntakeMethodArr = [
+    IntakeMethod.FLOOR,
+    IntakeMethod.PLAYER,
+    IntakeMethod.BOTH,
+    IntakeMethod.NO
+];
+
+export const TeamColorArr = [
+    TeamColor.BLUE,
+    TeamColor.RED
+];
+
+export const StartPosArr = [
+    StartPos.DEPOT,
+    StartPos.MIDDLE,
+    StartPos.PLAYER
+];
+
+export const UsesArr = [
+    Uses.SHOOT,
+    Uses.HANGING,
+    Uses.DEFENSE,
+    Uses.SUPPORT
+]
